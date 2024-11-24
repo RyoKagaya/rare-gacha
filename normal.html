@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ペンギンガチャ</title>
+    <style>
+        /* 全体のレイアウト */
+        body{
+            font-family:futura;
+            max-width: 960px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div><h1>ペンギンガチャ</h1></div>
+    <div><h2>ノーマルガチャ</h2></div>
+    <div id="image-container"></div>
+    <div></div>
+    <div><button id="btn">ガチャを回す</button></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        
+        let lastResult = "";
+        // 前回の結果を記憶する変数
+        
+        // alert(randomNumber1);
+
+        $("#btn").on("click",function(){
+            
+            const randomNumber1= Math.ceil(Math.random()*10);
+             // 画像コンテナをクリア
+             $("#image-container").empty();
+             let imageUrl;
+             let currentResult;
+
+            if(randomNumber1 == 10){
+            // 10のとき以下を表示する。
+            console.log("Posochan");
+            currentResult = "Posochan";
+
+            if(lastResult == "Posochan"){
+                imageUrl = "img/ぽそ_透過.PNG";
+            }else{
+            imageUrl = "img/Posochan_透過.PNG";
+            // ぽそちゃんの画像パス
+            }
+        }else if(randomNumber1 >= 7 && randomNumber1 <= 9){
+            // 9以下7以上の場合以下を表示する。
+            console.log("Ratipen");
+            imageUrl = "img/Ratipen_透過.PNG";
+        }else if(randomNumber1 >= 4 && randomNumber1 <= 6){
+            // 6以下4以上の場合以下を表示する。
+            console.log("Mosopen");
+            imageUrl = "img/Mosopen_透過.PNG";
+        }else if(randomNumber1 >= 1 && randomNumber1 <= 3){
+            // 3以下1以上の場合以下を表示する。
+            console.log("Garapen");
+            imageUrl = "img/Garapen_透過.PNG";
+        }
+
+        if (imageUrl) {
+            // 画像を表示
+            
+            const img = $("<img>").attr("src",imageUrl).css("width","30px");
+            $("#image-container").append(img);
+            }
+
+            // 今回の結果を次回のためにlastResultに保存
+        lastResult = currentResult;
+
+            })
+        
+
+       
+    </script>
+</body>
+</html>

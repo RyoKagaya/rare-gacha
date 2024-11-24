@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ペンギンガチャ</title>
+    <style>
+        /* 全体のレイアウト */
+        body{
+            font-family:futura;
+            max-width: 960px;
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="css/select.css">
+</head>
+<body class="body">
+    <div>
+        <header>
+            <div class="header-container">
+                <div><img src="img/RATIOロゴ青（会社名）.png" alt="" style="height: 90px;"></div>
+                <div class="gem-container">
+                    <div><img src="img/gem.png" alt="" style="height: 30px;"></div>
+                    <div><p id="gemCount">100</p></div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="btn-container">
+    <div><button id="god-fest-btn"><p class="subtitle">ぽそちゃん出現率、超絶UP中!</p><p class="gacha-name">ゴッドフェス</p><p class="remaining-days">あとX日</p></button></div>
+    <div><button id="rare-btn"><p class="subtitle">ぽそちゃん出現率、UP中!</p><p class="gacha-name">レアガチャ</p></button></div>
+    <div><button id="normal-btn"><p class="subtitle">進化カーニバル開催中!</p><p class="gacha-name">ノーマルガチャ</p></button></div>
+    </div>
+    <div class="command-container">
+        <div class="command-container"><img src="img/ダンジョン.png" alt="" style="width: 80px;"></div>
+        <div class="command-container"><img src="img/モンスター.png" alt="" style="width: 80px;"></div>
+        <div class="command-container"><img src="img/ガチャ.png" alt="" style="width: 80px;"></div>
+        <div class="command-container"><img src="img/フレンド.png" alt="" style="width: 80px;"></div>
+    </div>
+    <div id="image-container"></div>
+    <div></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        // 初期のジェムの数
+        let gems = 100;
+
+        // gemsの値をlocalStorageに保存
+        localStorage.setItem("gems", gems);
+
+        // 各ボタンにリンクを設定
+        $("#god-fest-btn").on("click",function(){
+            localStorage.setItem("gems", gems); // ページ移動前に保存
+            window.location.href = "god-fest.html"; // ゴッドフェスのリンク先
+        });
+        $("#rare-btn").on("click",function(){
+            localStorage.setItem("gems", gems); // ページ移動前に保存
+            window.location.href = "rare.html"; // ゴッドフェスのリンク先
+        });
+        $("#normal-btn").on("click",function(){
+            localStorage.setItem("gems", gems); // ページ移動前に保存
+            window.location.href = "normal.html"; // ゴッドフェスのリンク先
+        });
+      
+        
+        
+
+       
+    </script>
+</body>
+</html>

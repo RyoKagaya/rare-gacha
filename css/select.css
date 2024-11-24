@@ -1,0 +1,77 @@
+*{
+    font-family: meiryo;
+}
+
+.body{
+    width: 960px;
+}
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+
+.gem-container{
+    display: flex;
+    align-items: center;
+}
+
+.btn-container{
+    background-color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.btn-container button{
+    background-color: #246dc8;
+    color: white;
+    border: none;
+    width: 200px;
+    height: 80px;
+    margin: 20px;
+    padding: 10px;
+    text-align: left;
+    position: relative;
+    border-radius: 8px;
+    cursor:pointer;
+    transition: background-color 0.2s ease;
+    
+}
+
+.btn-container button:hover{
+    background-color: #ffc40f;
+}
+
+.btn-container .subtitle{
+    font-size: 12px;
+    text-align: left;
+    margin: 0;
+}
+
+.btn-container .gacha-name{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 8px;
+}
+
+.btn-container .remaining-days{
+    font-size: 10px;
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    margin: 0;
+}
+
+.command-container{
+    width: 960px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #246dc8 ;
+}

@@ -1,0 +1,75 @@
+.body{
+    width: 960px;
+}
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+
+.gem-container{
+    display: flex;
+    align-items: center;
+}
+
+.wave{
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 160vh; /* 波の高さを画面の2倍に設定して全体を覆う */
+    background: url('/img/wave.png');
+    background-size: cover; /* 画像サイズを画面幅に合わせる */
+    animation: waveUp 1.5s ease-out forwards;
+}
+
+#image-container {
+    position: relative;
+    overflow: hidden; /* はみ出る部分を隠す */
+    height: 80vh; /* 適切な高さを設定 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 波が下から上へ移動するアニメーション */
+@keyframes waveUp {
+    0% {
+        bottom: -100%; /* 画面の下 */
+    }
+    100% {
+        bottom: 0; /* 最終位置：画面中央 */
+    }
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 960px;
+    margin: 0 auto;
+}
+
+#btn{
+    width: 200px;
+    height: 200px;
+    background:#ffc40f;
+    border-radius:100%;
+    border: none;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease;
+    top: 100%;
+    left:50%;
+    transform: translate(0%,-50%);
+}
+
+#btn:hover{
+    background-color: #246dc8;
+}
